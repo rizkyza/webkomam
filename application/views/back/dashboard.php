@@ -4,7 +4,7 @@
 
 <div class="content-wrapper">
   <div class="box-body">
-    <div class="callout callout-success "><i class='fa fa-bullhorn'></i> Selamat Datang Bro, <b><?php echo $this->session->userdata('nama') ?></b>
+    <div class="callout callout-success "><i class='fa fa-bullhorn'></i> Selamat Datang, <b><?php echo $this->session->userdata('nama') ?></b>
     </div>
   </div>
 
