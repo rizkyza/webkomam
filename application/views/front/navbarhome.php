@@ -23,16 +23,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Desa <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Desa Batu Butok</a></li>
-            <li><a href="#">Desa Uko</a></li>
-            <li><a href="#">Desa Muara Langon</a></li>
-            <li><a href="#">Desa Muara Kuaro</a></li>
-            <li><a href="#">Desa Prayon</a></li>
-            <li><a href="#">Desa Swan Slutung</a></li>
-            <li><a href="#">Desa Lusan</a></li>
-            <li><a href="#">Desa Binangon</a></li>
-            <li><a href="#">Desa Sekuan Makmur</a></li>
-            <li><a href="#">Desa Selerong</a></li>
+              <?php
+                  foreach ($data_desas as $val ){ ?>
+                    <li><a href="#"> <?php echo $val->nama_desa ?></a></li>
+                <?php } ?>
           </ul>
         </li>
         <li class="dropdown">
@@ -121,7 +115,3 @@ if (isset($_SESSION['username'])) {
     </div>
   </div>
 </nav>
-
-
-
-
