@@ -6,12 +6,6 @@ class detail_desa_model extends CI_Model
   public $id    = 'id_detail_desa';
   public $order = 'DESC';
 
-  function get_all()
-  {
-    $this->db->order_by($this->id, $this->order);
-    return $this->db->get($this->table)->result();
-  }
-
   function get_combo_detail_desa()
   {
     $this->db->order_by('nama_desa', 'ASC');
@@ -25,6 +19,12 @@ class detail_desa_model extends CI_Model
       }
       return $data;
     }
+  }
+
+  function get_all()
+  {
+    $this->db->order_by($this->id, $this->order);
+    return $this->db->get($this->table)->result();
   }
 
   // get data by id
