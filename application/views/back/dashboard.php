@@ -1,10 +1,10 @@
 <?php $this->load->view('back/head'); ?>
 <?php $this->load->view('back/header'); ?>
-<?php $this->load->view('back/leftbar'); ?>      
+<?php $this->load->view('back/leftbar'); ?>
 
 <div class="content-wrapper">
   <div class="box-body">
-    <div class="callout callout-success "><i class='fa fa-bullhorn'></i> Selamat Datang <b><?php echo $this->session->userdata('nama') ?></b>
+    <div class="callout callout-success "><i class='fa fa-bullhorn'></i> Selamat Datang Bro, <b><?php echo $this->session->userdata('nama') ?></b>
     </div>
   </div>
 
@@ -27,11 +27,11 @@
             <div class="box-body no-padding">
               <!--The calendar -->
               <div id="calendar" style="width: 100%"></div>
-            
+
             <!-- /.box-body -->
             <div class="box-footer text-black">
-              
-            
+
+
     <div class='row'>
       <div class='col-lg-6 col-xs-6'>
         <div class='small-box bg-yellow'>
@@ -71,12 +71,12 @@
           <div class='inner'><h3> <?php echo $total_user ?> </h3><p>User</p></div>
           <div class='icon'><i class='fa fa-male'></i></div>
           <a href='<?php echo base_url('admin/auth/user') ?>' class='small-box-footer'>Selengkapnya <i class='fa fa-arrow-circle-right'></i></a>
-        </div> 
+        </div>
         <div class='small-box bg-orange'>
           <div class='inner'><h3> <?php echo $total_data_pejabat ?> </h3><p>Data Pejabat</p></div>
           <div class='icon'><i class='fa fa-user'></i></div>
           <a href='<?php echo base_url('admin/data_pejabat') ?>' class='small-box-footer'>Selengkapnya <i class='fa fa-arrow-circle-right'></i></a>
-        </div>       
+        </div>
       </div>
     </div>
     </div>
@@ -119,4 +119,4 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 
-<?php $this->load->view('back/footer'); ?>      
+<?php $this->load->view('back/footer'); ?>
