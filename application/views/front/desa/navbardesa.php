@@ -24,7 +24,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Desa <b class="caret"></b></a>
           <ul class="dropdown-menu">
               <?php
-                  foreach ($data_desas as $val ){ ?>
+                  foreach ($desa as $val ){ ?>
                     <li><a href="<?php echo base_url("desa/read/$val->nama_desa_seo ")?>"> <?php echo $val->nama_desa ?></a></li>
                 <?php } ?>
           </ul>
