@@ -1,0 +1,170 @@
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+
+class Itemmenu_data extends CI_Controller
+{
+  function __construct()
+  {
+    parent::__construct();
+    $this->load->model('Itemmenu_data_model');
+
+    $this->data['module'] = 'Itemmenu Data';
+
+    /* cek login */
+    if (!$this->ion_auth->logged_in()){
+      // apabila belum login maka diarahkan ke halaman login
+      redirect('admin/auth/login', 'refresh');
+    }
+    elseif($this->ion_auth->is_user()){
+      // apabila belum login maka diarahkan ke halaman login
+      redirect('admin/auth/login', 'refresh');
+    }
+  }
+
+  public function index()
+  {
+    $this->data['title'] = "Item Menu Data";
+
+    $this->data['itemmenu_data_data'] = $this->Itemmenu_data_model->get_all();
+    $this->load->view('back/itemmenu_data/itemmenu_data_list', $this->data);
+  }
+
+  public function create()
+  {
+    $this->data['title']          = 'Tambah Itemmenu Data Baru';
+    $this->data['action']         = site_url('admin/itemmenu_data/create_action');
+    $this->data['button_submit']  = 'Submit';
+    $this->data['button_reset']   = 'Reset';
+
+    $this->data['id_itemmenu_data'] = array(
+      'name'  => 'id_itemmenu_data',
+      'id'    => 'id_itemmenu_data',
+      'type'  => 'hidden',
+    );
+
+    $this->data['itemmenu'] = array(
+      'name'  => 'itemmenu',
+      'id'    => 'itemmenu',
+      'type'  => 'text',
+      'class' => 'form-control',
+      'value' => $this->form_validation->set_value('itemmenu'),
+    );
+
+    $this->load->view('back/itemmenu_data/itemmenu_data_add', $this->data);
+  }
+
+  public function create_action()
+  {
+    $this->load->helper('judul_seo_helper');
+    $this->_rules();
+
+    if ($this->form_validation->run() == FALSE)
+    {
+      $this->create();
+    }
+      else
+      {
+        $data = array(
+          'itemmenu'  => $this->input->post('itemmenu'),
+          'itemmenu_seo'    => judul_seo($this->input->post('itemmenu'))
+        );
+
+        // eksekusi query INSERT
+        $this->Itemmenu_data_model->insert($data);
+        // set pesan data berhasil dibuat
+        $this->session->set_flashdata('message', 'Data berhasil dibuat');
+        redirect(site_url('admin/itemmenu_data'));
+      }
+  }
+
+  public function update($id)
+  {
+    $row = $this->Itemmenu_data_model->get_by_id($id);
+    $this->data['itemmenu_data'] = $this->Itemmenu_data_model->get_by_id($id);
+
+    if ($row)
+    {
+      $this->data['title']          = 'Update Itemmenu Data';
+      $this->data['action']         = site_url('admin/itemmenu_data/update_action');
+      $this->data['button_submit']  = 'Update';
+      $this->data['button_reset']   = 'Reset';
+
+      $this->data['id_itemmenu_data'] = array(
+        'name'  => 'id_itemmenu_data',
+        'id'    => 'id_itemmenu_data',
+        'type'  => 'hidden',
+      );
+
+      $this->data['itemmenu'] = array(
+        'name'  => 'itemmenu',
+        'id'    => 'itemmenu',
+        'type'  => 'text',
+        'class' => 'form-control',
+      );
+
+      $this->load->view('back/itemmenu_data/itemmenu_data_edit', $this->data);
+    }
+      else
+      {
+        $this->session->set_flashdata('message', 'Data tidak ditemukan');
+        redirect(site_url('admin/itemmenu_data'));
+      }
+  }
+
+  public function update_action()
+  {
+    $this->load->helper('judul_seo_helper');
+    $this->_rules();
+
+    if ($this->form_validation->run() == FALSE)
+    {
+      $this->update($this->input->post('id_itemmenu_data'));
+    }
+      else
+      {
+        $data = array(
+          'itemmenu'  => $this->input->post('itemmenu'),
+          'itemmenu_seo'    => judul_seo($this->input->post('itemmenu'))
+        );
+
+        $this->Itemmenu_data_model->update($this->input->post('id_itemmenu_data'), $data);
+        $this->session->set_flashdata('message', 'Edit Data Berhasil');
+        redirect(site_url('admin/itemmenu_data'));
+      }
+  }
+
+  public function delete($id)
+  {
+    $row = $this->Itemmenu_data_model->get_by_id($id);
+
+    if ($row)
+    {
+      $this->Itemmenu_data_model->delete($id);
+      $this->session->set_flashdata('message', 'Data berhasil dihapus');
+      redirect(site_url('admin/itemmenu_data'));
+    }
+      // Jika data tidak ada
+      else
+      {
+        $this->session->set_flashdata('message', 'Data tidak ditemukan');
+        redirect(site_url('admin/itemmenu_data'));
+      }
+  }
+
+  public function _rules()
+  {
+    $this->form_validation->set_rules('itemmenu', 'Item Menu', 'trim|required');
+
+    // set pesan form validasi error
+    $this->form_validation->set_message('required', '{field} wajib diisi');
+
+    $this->form_validation->set_rules('id_itemmenu_data', 'id_itemmenu_data', 'trim');
+    $this->form_validation->set_error_delimiters('<div class="alert alert-danger alert">', '</div>');
+  }
+
+}
+
+/* End of file Itemmenu_data.php */
+/* Location: ./application/controllers/Itemmenu_data.php */
+/* Please DO NOT modify this information : */
+/* Generated by Harviacode Codeigniter CRUD Generator 2016-10-17 02:19:21 */
+/* http://harviacode.com */

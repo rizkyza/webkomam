@@ -11,6 +11,8 @@ class Home extends CI_Controller {
 		$this->load->model('Kategori_model');
 		$this->load->model('vimi_model');
 		$this->load->model('data_desa_model');
+		$this->load->model('detail_desa_model');
+		$this->load->model('itemmenu_data_model');
 
 		/* menyiapkan data yang akan disertakan/ ditampilkan pada view */
 		$this->data['page']  = 'Home';
@@ -18,7 +20,8 @@ class Home extends CI_Controller {
 
 		/* memanggil function dari masing2 model yang akan digunakan */
 		$this->data['data_vimi'] = $this->vimi_model->get_all();
-		$this->data['data_desas'] = $this->data_desa_model->get_all();
+		$this->data['data_itemmenu_data'] = $this->itemmenu_data_model->get_all();
+		$this->data['detail_desas'] = $this->detail_desa_model->get_all();
 
 		/* memanggil view yang telah disiapkan dan passing data dari model ke view*/
 		$this->load->view('front/home/headerhome');

@@ -41,9 +41,9 @@
             <span class="icon-next"></span>
         </a>
 
-    
 
-		
+
+
 
   	</section>
   	<!-- Section: intro-->
@@ -73,6 +73,7 @@
 					</div>
 					</div>
 					<div class="service-desc">
+						<!--<embed src="./assets/ouv/desa.svg" width="80" height="80" type="image/svg+xml"/> -->
 						<h5>Sambutan Camat</h5>
 						<p><i>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias sit asperiores quae delectus dolor inventore, aliquid minima quod consequuntur dignissimos sint eveniet repudiandae odit ad, vitae a, incidunt ea eligendi."</i></p>
 						<p><b>Syaifuddin Zuhri,S.sos</b></p>
@@ -81,7 +82,7 @@
 				</div>
             </div>
         </div>
-			
+
 		</div>
 		</div>
     </section>
@@ -115,7 +116,7 @@
 				<div class="wow bounceInUp" data-wow-delay="0.2s">
                 <div class="team boxed-grey">
                     <div class="inner">
-						<h5>Bupati Kabupaten Paser</h5>
+						<h5>Bupati Paser</h5>
                         <p class="subtitle"><i class="fa fa-2x fa-angle-down"></i></p>
                         <div class="avatar "><a href="#"><img src="assets/img/gkm1.jpg" alt="" class="pull-center img-responsive" /></a></div>
                     </div>
@@ -126,7 +127,7 @@
 				<div class="wow bounceInUp" data-wow-delay="0.5s">
                 <div class="team boxed-grey">
                     <div class="inner">
-						<h5>Wakil Bupati Kabupaten Paser</h5>
+						<h5>Wakil Bupati Paser</h5>
                         <p class="subtitle"><i class="fa fa-2x fa-angle-down"></i></p>
                         <div class="avatar"><a href="#"><img src="assets/img/bkm1.jpg" alt="" class="pull-center img-responsive" /></a></div>
 
@@ -138,7 +139,7 @@
 				<div class="wow bounceInUp" data-wow-delay="0.8s">
                 <div class="team boxed-grey">
                     <div class="inner">
-						<h5>Sekretaris Daerah Kabupaten Paser</h5>
+						<h5>Sekda Paser</h5>
                         <p class="subtitle"><i class="fa fa-2x fa-angle-down"></i></p>
                         <div class="avatar"><a href="#"><img src="assets/img/kpd1.jpg" alt="" class="pull-center img-responsive" /></a></div>
 
@@ -150,7 +151,7 @@
 				<div class="wow bounceInUp" data-wow-delay="1s">
                 <div class="team boxed-grey">
                     <div class="inner">
-						<h5>Camat Kecamatan Muara Komam</h5>
+						<h5>Camat Muara Komam</h5>
                         <p class="subtitle"><i class="fa fa-2x fa-angle-down"></i></p>
                         <div class="avatar"><a href="#"><img src="assets/img/adb1.jpg" alt="" class="pull-center img-responsive" /></a></div>
 
@@ -194,7 +195,7 @@
                     <div class="inner">
 						<h5>Biografi Muara Komam</h5>
                         <p class="subtitle"><i class="fa fa-2x fa-angle-down"></i></p>
-                        <div class="avatar "><a href="#"><img src="assets/img/gkm1.jpg" alt="" class="pull-center img-responsive" /></a></div>
+                        <div class="avatar "><a href="#"><img src="assets/img-front/geografis.svg" width="100" height="100" class="pull-center" /></a></div>
                     </div>
                 </div>
 				</div>
@@ -205,7 +206,7 @@
                     <div class="inner">
 						<h5>Letak Geografis</h5>
                         <p class="subtitle"><i class="fa fa-2x fa-angle-down"></i></p>
-                        <div class="avatar"><a href="#"><img src="assets/img/bkm1.jpg" alt="" class="pull-center img-responsive" /></a></div>
+                        <div class="avatar"><a href="#"><img src="assets/img-front/geografis.svg" width="100" height="100" class="pull-center" /></a></div>
 
                     </div>
                 </div>
@@ -217,7 +218,7 @@
                     <div class="inner">
 						<h5>Kependudukan</h5>
                         <p class="subtitle"><i class="fa fa-2x fa-angle-down"></i></p>
-                        <div class="avatar"><a href="#"><img src="assets/img/kpd1.jpg" alt="" class="pull-center img-responsive" /></a></div>
+                        <div class="avatar"><a href="#"><img src="assets/img-front/kependudukan.svg" width="100" height="100" class="pull-center" /></a></div>
 
                     </div>
                 </div>
@@ -229,7 +230,7 @@
                     <div class="inner">
 						<h5>Adat & Budaya</h5>
                         <p class="subtitle"><i class="fa fa-2x fa-angle-down"></i></p>
-                        <div class="avatar"><a href="#"><img src="assets/img/adb1.jpg" alt="" class="pull-center img-responsive" /></a></div>
+                        <div class="avatar"><a href="#"><img src="assets/img-front/kebudayaan.svg" width="100" height="100" class="pull-center" /></a></div>
 
                     </div>
                 </div>
@@ -275,9 +276,9 @@
 						<h5>Visi</h5>
 
 						<?php foreach ($data_vimi as $val) { ?>
-							
+
 						<p><?php echo $val->visi;?></p>
-						
+
 
 					</div>
                 </div>
@@ -452,7 +453,7 @@
 			</div>
 			</div>
 		</div>
-		
+
 		<div class="container">
 
 		<div class="row">

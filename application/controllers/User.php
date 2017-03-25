@@ -30,7 +30,7 @@ class User extends CI_Controller {
 		/* menyiapkan data yang akan disertakan/ ditampilkan pada view */
 		$this->data['page'] = "Register/ Login";
 		$this->data['title'] = "Portal Berita CI";
-		
+
 		// setting bawaan ionauth
 		$tables 					= $this->config->item('tables','ion_auth');
 		$identity_column 	= $this->config->item('identity','ion_auth');
@@ -153,7 +153,7 @@ class User extends CI_Controller {
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', '<div class="alert alert-dismissible alert-success">
 			  <button type="button" class="close" data-dismiss="alert">&times;</button>Login berhasil</b></div>');
-				
+
 				redirect('/', 'refresh');
 			}
 				else
@@ -166,7 +166,7 @@ class User extends CI_Controller {
 			{
 				/* set pesan error flash data */
 				$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-				
+
 				/* menyiapkan data dalam format array */
 				$this->data['username'] = array(
 					'name' => 'username',
@@ -251,7 +251,7 @@ class User extends CI_Controller {
 				$identity_column = $this->config->item('identity','ion_auth');
 				$identity = $this->ion_auth->where($identity_column, $this->input->post('identity'))->users()->row();
 
-				if(empty($identity)) 
+				if(empty($identity))
 				{
 					if($this->config->item('identity', 'ion_auth') != 'email')
 					{

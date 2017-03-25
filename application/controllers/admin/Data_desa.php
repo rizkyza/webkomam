@@ -7,7 +7,7 @@ class Data_desa extends CI_Controller
     parent::__construct();
     $this->load->model('Data_desa_model');
 
-    $this->data['module'] = 'Data Desa';    
+    $this->data['module'] = 'Data Desa';
 
     /* cek login */
     if (!$this->ion_auth->logged_in()){
@@ -28,7 +28,7 @@ class Data_desa extends CI_Controller
     $this->load->view('back/data_desa/data_desa_list', $this->data);
   }
 
-  public function create() 
+  public function create()
   {
     $this->data['title']          = 'Tambah Data Desa Baru';
     $this->data['action']         = site_url('admin/data_desa/create_action');
@@ -51,17 +51,17 @@ class Data_desa extends CI_Controller
 
     $this->load->view('back/data_desa/data_desa_add', $this->data);
   }
-  
-  public function create_action() 
+
+  public function create_action()
   {
     $this->load->helper('nama_seo_helper');
     $this->_rules();
 
-    if ($this->form_validation->run() == FALSE) 
+    if ($this->form_validation->run() == FALSE)
     {
       $this->create();
-    } 
-      else 
+    }
+      else
       {
         $data = array(
           'nama_desa'  => $this->input->post('nama_desa'),
@@ -73,15 +73,15 @@ class Data_desa extends CI_Controller
         // set pesan data berhasil dibuat
         $this->session->set_flashdata('message', 'Data berhasil dibuat');
         redirect(site_url('admin/data_desa'));
-      }  
+      }
   }
-  
-  public function update($id) 
+
+  public function update($id)
   {
     $row = $this->Data_desa_model->get_by_id($id);
     $this->data['data_desa'] = $this->Data_desa_model->get_by_id($id);
 
-    if ($row) 
+    if ($row)
     {
       $this->data['title']          = 'Update Data Desa';
       $this->data['action']         = site_url('admin/data_desa/update_action');
@@ -102,24 +102,24 @@ class Data_desa extends CI_Controller
       );
 
       $this->load->view('back/data_desa/data_desa_edit', $this->data);
-    } 
-      else 
+    }
+      else
       {
         $this->session->set_flashdata('message', 'Data tidak ditemukan');
         redirect(site_url('admin/data_desa'));
       }
   }
-  
-  public function update_action() 
+
+  public function update_action()
   {
     $this->load->helper('nama_seo_helper');
     $this->_rules();
 
-    if ($this->form_validation->run() == FALSE) 
+    if ($this->form_validation->run() == FALSE)
     {
       $this->update($this->input->post('id_desa'));
-    } 
-      else 
+    }
+      else
       {
         $data = array(
           'nama_desa'  => $this->input->post('nama_desa'),
@@ -131,26 +131,26 @@ class Data_desa extends CI_Controller
         redirect(site_url('admin/data_desa'));
       }
   }
-  
-  public function delete($id) 
+
+  public function delete($id)
   {
     $row = $this->Data_desa_model->get_by_id($id);
-    
-    if ($row) 
+
+    if ($row)
     {
       $this->Data_desa_model->delete($id);
       $this->session->set_flashdata('message', 'Data berhasil dihapus');
       redirect(site_url('admin/data_desa'));
-    } 
+    }
       // Jika data tidak ada
-      else 
+      else
       {
         $this->session->set_flashdata('message', 'Data tidak ditemukan');
         redirect(site_url('admin/data_desa'));
       }
   }
 
-  public function _rules() 
+  public function _rules()
   {
     $this->form_validation->set_rules('nama_desa', 'Nama Desa', 'trim|required');
 

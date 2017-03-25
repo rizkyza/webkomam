@@ -31,7 +31,6 @@
             <!-- /.box-body -->
             <div class="box-footer text-black">
 
-
     <div class='row'>
       <div class='col-lg-6 col-xs-6'>
         <div class='small-box bg-yellow'>

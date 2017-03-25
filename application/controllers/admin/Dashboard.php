@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller {
-	
+
 	public function index(){
 		$this->load->model('Berita_model');
   	    $this->load->model('Kategori_model');
@@ -16,6 +16,7 @@ class Dashboard extends CI_Controller {
   	    $this->load->model('Kategori_sekolah_model');
   	    $this->load->model('Data_penduduk_model');
   	    $this->load->model('Data_kesehatan_model');
+				$this->load->model('Itemmenu_data_model');
   	    $this->load->model('Featured_model');
   	    $this->load->model('Ion_auth_model');
 
@@ -44,6 +45,7 @@ class Dashboard extends CI_Controller {
 		    'total_kategori_sekolah' 		=> $this->Kategori_sekolah_model->total_rows(),
 		    'total_data_penduduk'	 		=> $this->Data_penduduk_model->total_rows(),
 		    'total_data_penduduk'	 		=> $this->Data_kesehatan_model->total_rows(),
+				'total_itemmenu_data'	 		=> $this->Itemmenu_data_model->total_rows(),
 		    'total_vimi' 					=> $this->Vimi_model->total_rows(),
 		    'total_kategori_jabatan' 		=> $this->Kategori_jabatan_model->total_rows(),
 		    'total_data_pejabat' 			=> $this->Data_pejabat_model->total_rows()
@@ -52,5 +54,5 @@ class Dashboard extends CI_Controller {
 			$this->load->view('back/dashboard',$this->data);
 		}
 	}
-	
+
 }
