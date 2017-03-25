@@ -16,8 +16,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-left navbar-main-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#intro">Home</a></li>
-        <li><a href="#about">Profil</a></li>
+        <li class="active"><a href="<?php echo base_url()?>#intro">Home</a></li>
+        <li><a href="<?php echo base_url()?>#about">Profil</a></li>
         <li><a href="#vimi">Visi dan Misi</a></li>
         <li><a href="#struktural">Struktural</a></li>
         <li class="dropdown">
