@@ -18,8 +18,8 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="<?php echo base_url()?>#intro">Home</a></li>
         <li><a href="<?php echo base_url()?>#about">Profil</a></li>
-        <li><a href="#vimi">Visi dan Misi</a></li>
-        <li><a href="#struktural">Struktural</a></li>
+        <li><a href="<?php echo base_url()?>#vimi">Visi dan Misi</a></li>
+        <li><a href="<?php echo base_url()?>#struktural">Struktural</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Desa <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -48,10 +48,10 @@
             <li><a href="#">Data 5</a></li>
           </ul>
         </li>
-        <li><a href="#news">Berita</a></li>
-    <li><a href="#galeri">Galeri</a></li>
-    <li><a href="#cari">Cari</a></li>
-    <li><a href="#contact">Kontak</a></li>
+        <li><a href="<?php echo base_url()?>#news">Berita</a></li>
+    <li><a href="<?php echo base_url()?>#galeri">Galeri</a></li>
+    <li><a href="<?php echo base_url()?>#cari">Cari</a></li>
+    <li><a href="<?php echo base_url()?>#contact">Kontak</a></li>
 
         <!--<form class="navbar-form navbar-left">
         <div class="form-group">
